@@ -1,4 +1,4 @@
-# ==============================================================================
+﻿# ==============================================================================
 # Antigravity (agy) All-In-One Skills & Plugins Installer for Windows (PowerShell)
 # Repositorio: https://github.com/Arlia1/skills-y-data.git
 # ==============================================================================
@@ -56,11 +56,19 @@ Clone-Or-Update -Name "karpathy-guidelines" -RepoUrl "https://github.com/multica
 Clone-Or-Update -Name "superpowers" -RepoUrl "https://github.com/obra/superpowers.git"
 Clone-Or-Update -Name "thermos" -RepoUrl "https://github.com/LayZeeDK/thermos-claude-plugin.git" -Branch "v1.1.0"
 
-Write-Host "`n[3/5] Instalando Skills Standalone (Graphify)..." -ForegroundColor Yellow
+Write-Host "`n[3/5] Instalando Skills Standalone (Graphify & Video Production)..." -ForegroundColor Yellow
 $LocalGraphify = Join-Path $ScriptDir "skills\graphify"
 if (Test-Path $LocalGraphify) {
     Copy-Item -Path $LocalGraphify -Destination $SkillsDir -Recurse -Force
     Write-Host "✓ Skill graphify copiada a $SkillsDir\graphify." -ForegroundColor Green
+}
+
+$LocalVideo = Join-Path $ScriptDir "skills\video-production"
+if (Test-Path $LocalVideo) {
+    Get-ChildItem -Path $LocalVideo -Directory | ForEach-Object {
+        Copy-Item -Path $_.FullName -Destination $SkillsDir -Recurse -Force
+    }
+    Write-Host "✓ 29 Skills de Video Production copiadas a $SkillsDir." -ForegroundColor Green
 }
 
 # Python pip install graphifyy si python está instalado

@@ -10,7 +10,8 @@ Este repositorio contiene la configuración, plugins, skills y manifiestos neces
 ## 📊 Contenido del Ecosistema
 
 - **8 Plugins Oficiales** sincronizados y probados.
-- **462 Skills Especializadas** que cubren arquitectura, frontend, backend, testing, devops, mobile, SEO y seguridad.
+- **491+ Skills Especializadas** que cubren arquitectura, frontend, backend, testing, devops, mobile, SEO, seguridad y **producción de video viral**.
+- **Suite de Video Production (29 Skills)** en `skills/video-production/` (Papercut 2D/3D, Three.js, guiones virales, psicología publicitaria, dirección de cámara y pipelines de render).
 - **92 Agentes Autónomos** especializados para revisión de código, resolución de errores de compilación y orquestación.
 - **2 Servidores MCP** (`memory` para memoria a largo plazo y `sequential-thinking` para descomposición de problemas complejos).
 - **1 Skill Standalone** (`graphify` para mapeo de arquitecturas de bases de código en grafos).

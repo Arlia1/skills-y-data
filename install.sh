@@ -78,7 +78,7 @@ clone_or_update "superpowers" "https://github.com/obra/superpowers.git"
 # 8. Thermos (3 skills, 2 agents - Auditorías termonucleares de código)
 clone_or_update "thermos" "https://github.com/LayZeeDK/thermos-claude-plugin.git" "v1.1.0"
 
-echo -e "\n${YELLOW}[3/5] Instalando Skills Standalone (Graphify)...${NC}"
+echo -e "\n${YELLOW}[3/5] Instalando Skills Standalone (Graphify & Video Production)...${NC}"
 if [ -d "${SCRIPT_DIR}/skills/graphify" ]; then
     cp -r "${SCRIPT_DIR}/skills/graphify" "${SKILLS_DIR}/"
     echo -e "${GREEN}✓ Skill graphify copiada a ${SKILLS_DIR}/graphify.${NC}"
@@ -90,6 +90,13 @@ fi
 if command -v pip3 &>/dev/null || command -v pip &>/dev/null; then
     echo -e "    Instalando dependencia Python 'graphifyy'..."
     python3 -m pip install --user --quiet graphifyy 2>/dev/null || pip install --user --quiet graphifyy 2>/dev/null || echo -e "    ${YELLOW}(Opcional) No se pudo instalar graphifyy via pip. Puedes instalarlo con 'pip install graphifyy'.${NC}"
+fi
+
+# Instalar suite de 29 skills de producción de video y virales
+if [ -d "${SCRIPT_DIR}/skills/video-production" ]; then
+    mkdir -p "${SKILLS_DIR}"
+    cp -r "${SCRIPT_DIR}/skills/video-production"/* "${SKILLS_DIR}/"
+    echo -e "${GREEN}✓ 29 Skills de Video Production copiadas a ${SKILLS_DIR}/.${NC}"
 fi
 
 echo -e "\n${YELLOW}[4/5] Configurando import_manifest.json y Servidores MCP...${NC}"
